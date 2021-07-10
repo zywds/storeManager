@@ -1,0 +1,16 @@
+{
+  "id": "2664997",
+  "name": "storeManager",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "12668918",
+      "name": "姓名 用户名 昵称 (1)",
+      "font_class": "xingmingyonghumingnicheng",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    }
+  ]
+}
