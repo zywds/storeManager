@@ -28,6 +28,10 @@
   div {
     box-sizing: border-box;
   }
+
+  img {
+    vertical-align: middle;
+  }
   
   /**
    * Render the `main` element consistently in IE.

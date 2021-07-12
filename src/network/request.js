@@ -10,6 +10,8 @@ export function request(config) {
   //请求拦截
   instance.interceptors.request.use(
     config => {
+      console.log(config);
+      config.headers.Authorization = window.sessionStorage.getItem('token');
       return config;
     },
     error => {
@@ -20,6 +22,9 @@ export function request(config) {
   //响应拦截
   instance.interceptors.response.use(
     res => {
+      // token验证
+      // if (window.sessionStorage.getItem('token') !== res.data.token)
+      //   return false;
       return res.data;
     },
     error => {

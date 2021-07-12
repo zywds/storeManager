@@ -10,6 +10,7 @@ import './plugins/element';
 import './assets/font/iconfont.css';
 
 Vue.config.productionTip = false;
+Vue.component('AsideMenu');
 
 new Vue({
   router,
