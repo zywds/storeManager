@@ -12,13 +12,32 @@ const routes = [
     path: '/login',
     name: 'Login',
     component: () =>
-      import(/* webpackChunkName: "about" */ '../components/Login.vue'),
+      import(/* webpackChunkName: "about" */ '@/components/Login.vue'),
   },
   {
     path: '/home',
     name: 'Home',
     component: () =>
-      import(/* webpackChunkName: "about" */ '../views/Home/Home.vue'),
+      import(/* webpackChunkName: "about" */ '@/views/Home/Home.vue'),
+    redirect: '/home/welcome',
+    children: [
+      {
+        path: 'welcome',
+        name: 'Welcome',
+        component: () =>
+          import(
+            /* webpackChunkName: "about" */ '@/views/Home/components/Welcome.vue'
+          ),
+      },
+      {
+        path: 'users',
+        name: 'UserList',
+        component: () =>
+          import(
+            /* webpackChunkName: "about" */ '@/views/UserManagement/components/UserList.vue'
+          ),
+      },
+    ],
   },
 ];
 

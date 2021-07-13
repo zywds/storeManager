@@ -38,4 +38,4 @@ module.exports = {
     </button>
      */
   jsxBracketSameLine: true,
-}
+};

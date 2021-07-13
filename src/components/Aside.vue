@@ -1,20 +1,14 @@
 <template>
-  <el-aside :width="isCollapse ? '64px' : '200px'" class="aside">
+  <el-aside :width="isCollapse ? '55px' : '200px'" class="aside">
+    <div class="toggle-button" @click="isCollapse = !isCollapse">
+      <i :class="isCollapse ? 'el-icon-s-unfold' : 'el-icon-s-fold'"></i>
+    </div>
     <template v-if="menuData.length > 0">
-      <el-menu
-        class="el-menu-vertical-demo"
-        @open="handleOpen"
-        @close="handleClose"
-        background-color="#373d41"
-        text-color="#fff"
-        active-text-color="#409EFF"
-        unique-opened
-        :collapse="isCollapse"
-        :collapse-transition="false"
-      >
-        <div class="toggle-button" @click="isCollapse = !isCollapse">|||</div>
-        <aside-menu :menuData="menuData" :menuIcon="menuIcon"></aside-menu>
-      </el-menu>
+      <aside-menu
+        :menuData="menuData"
+        :menuIcon="menuIcon"
+        :isCollapse="isCollapse"
+      ></aside-menu>
     </template>
   </el-aside>
 </template>
@@ -37,31 +31,20 @@ export default {
   data() {
     return {
       isCollapse: false,
-      menuWidth: '200px',
     };
   },
-  methods: {
-    handleOpen(key, keyPath) {
-      console.log(key, keyPath);
-    },
-    handleClose(key, keyPath) {
-      console.log(key, keyPath);
-    },
-  },
+  methods: {},
 };
 </script>
 
 <style lang="less" scoped>
 .aside {
   background-color: #373d41;
-  .el-menu {
-    border-right: none;
-    .toggle-button {
-      text-align: center;
-      color: #fff;
-      background-color: #3b434a;
-      cursor: pointer;
-    }
+  overflow: hidden;
+  .toggle-button {
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
   }
 }
 </style>
